@@ -29,7 +29,7 @@ function WhyMew() {
       <h1 className="text-5xl">
         Why study with <em>MEWSchool</em>
       </h1>
-      <p className="w-[60%]">
+      <p className="sm:w-[60%]">
         We believe in the power of you, and we will not relent until you succeed
         in achieving what you have set out to do. MEW School is for those MADE
         TO DO. Explore the true meaning of yourself and set out to change the
@@ -37,7 +37,7 @@ function WhyMew() {
         learning technology and eager-to-help staff are there for you.
       </p>
 
-      <div className="grid grid-cols-2 gap-10 w-[70%]">
+      <div className="grid sm:grid-cols-2 gap-10 sm:w-[70%]">
         {data.map((data, key) => (
           <div
             key={key}

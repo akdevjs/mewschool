@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState } from "react";
 function Statistics() {
   const data = [
     {
@@ -17,19 +20,69 @@ function Statistics() {
       number: "10+",
     },
   ];
+  const [inView, setInView] = useState(false);
+  const setFunction = () => {
+    setInView(true);
+  };
   return (
-    <section className="flex flex-col gap-10 items-center justify-center text-center py-28 px-72 text-white ">
-      <h1 className="text-7xl">
+    <section className="relative flex flex-col gap-10 items-center justify-center text-center sm:py-28 py-10 sm:px-72 px-10 text-white h-full ">
+      <motion.div
+        whileInView={setFunction}
+        className="absolute top-5 w-full flex  z-0 "
+      >
+        <svg
+          width="1576"
+          height="366"
+          viewBox="0 0 1576 366"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-auto w-[100vw]"
+        >
+          <motion.path
+            d="M0.5 235.5C302.5 249.833 919.3 261 970.5 191C1021.7 121 906.5 49.8333 842.5 23C764.667 -2.49999 618.2 -18.5 655 121.5C691.8 261.5 880.667 299.5 970.5 301L1575 360.5"
+            stroke="#CFE155"
+            stroke-width="10"
+            initial={{
+              opacity: 0,
+              pathLength: 0,
+            }}
+            animate={
+              inView && {
+                opacity: 1,
+                pathLength: 1,
+              }
+            }
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+            }}
+          />
+        </svg>
+      </motion.div>
+      <div className="relative z-10 sm:w-28 sm:h-28 hidden sm:block">
+        <Image className="object-contain" src="/mew-logo.jpeg" fill alt="mew" />
+      </div>
+      <Image
+        className="object-contain sm:hidden block relative z-10"
+        src="/mew-logo.jpeg"
+        alt="mew"
+        width={100}
+        height={100}
+      />
+      <h1
+        style={{ boxShadow: "0 0 15px 15px #131b32" }}
+        className="relative z-10 text-center sm:text-7xl text-5xl bg-[#131B32] p-5 shadow-ll"
+      >
         In our virtual university, we go beyond the mere creation of degrees
       </h1>
-      <p className="px-40">
+      <p className="sm:px-40 ">
         We are dedicated to life transformation. Operating in 99 countries
         globally, we proudly maintain a 98% student satisfaction rate,
         underscoring our steadfast dedication to delivering high-quality
         education that equips individuals to excel in their professional
         endeavors and beyond.
       </p>
-      <div className="flex justify-between w-full">
+      <div className="sm:flex grid grid-cols-2 gap-10 flex-wrap justify-between w-full">
         {data.map((data, key) => (
           <div className="flex flex-col gap-2" key={key}>
             <p className="text-2xl">{data.name}</p>

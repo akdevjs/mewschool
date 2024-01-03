@@ -4,7 +4,7 @@ interface Props {
 }
 function CourseCard({ img }: Props) {
   return (
-    <article className="px-10 flex flex-col gap-5">
+    <article className="sm:px-10 px-5 flex flex-col gap-5">
       {/* Image */}
       <div className="relative w-full h-[200px]">
         <Image
@@ -17,7 +17,7 @@ function CourseCard({ img }: Props) {
       {/* Content */}
       <div className="flex items-center text-sm text-[#CFE255] text-start">
         <span className="w-full">Online</span>
-        <span className="border-l border-r border-[#CFE255] w-full text-center">
+        <span className="sm:border-l sm:border-r border-[#CFE255] w-full sm:text-center">
           12 Months
         </span>
         <span className="w-full text-end">Assignment Base</span>
@@ -30,7 +30,7 @@ function CourseCard({ img }: Props) {
         <b>$144</b>
         <p className=" text-[#CFE255] line-through">$200</p>
       </div>
-      <button className="text-sm border w-[200px] border-[#CFE255] p-2 hover:border-white transition-all duration-300">
+      <button className="text-sm border sm:w-[200px] border-[#CFE255] p-2 hover:border-white transition-all duration-300">
         Enroll Now
       </button>
     </article>

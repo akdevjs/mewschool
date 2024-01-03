@@ -5,3 +5,39 @@
 html {
   font-family: "Lora", serif;
 }
+
+shadow-ll {
+  /* box-shadow: "0 15px 15px #131b32"; */
+  box-shadow: 0 0 15px 15px red;
+  border: 2px solid green;
+}
+
+@media (max-width: 1700px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 1240px) {
+  html {
+    font-size: 60%;
+  }
+}

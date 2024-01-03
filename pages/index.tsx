@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
-    <div className="min-h-[100vh] bg-[#131B32]">
+    <div className="min-h-[100vh] bg-[#131B32] overflow-x-hidden">
       <Head>
         <title>MEW School of Leadership</title>
         <meta
@@ -46,6 +46,7 @@ const Home: NextPage = () => {
         subHeading="In-depth Analysis, Worldwide Recognition, Complete it with comfort"
         isDark={false}
       />
+
       <Statistics />
       <Footer />
     </div>

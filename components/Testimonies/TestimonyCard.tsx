@@ -4,7 +4,7 @@ interface Props {
 }
 function TestimonyCard({ img }: Props) {
   return (
-    <article className="px-10 flex flex-col gap-5">
+    <article className="sm:px-10 px-2 flex flex-col gap-5">
       {/* Image */}
       <div className="relative w-full h-[350px]">
         <Image
