@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface Props {
   img: string;
@@ -9,10 +10,9 @@ interface Props {
 }
 
 function InfoCard({ img, heading, content }: Props) {
-  const [inView, setInView] = useState(false);
-  const setFunction = () => {
-    setInView(true);
-  };
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
   return (
     <article className="text-5xl flex sm:flex-row flex-col w-full h-[100vh]">
       {/* Left Image */}
@@ -26,8 +26,8 @@ function InfoCard({ img, heading, content }: Props) {
       </div>
       {/* Info  */}
       <div className="relative sm:w-[50%] sm:p-32 h-[50%] p-14 sm:h-auto flex flex-col gap-5 text-white items-center justify-center text-center">
-        <motion.div
-          whileInView={setFunction}
+        <div
+          ref={ref}
           className="absolute top-0 sm:-top-2 w-full flex justify-center z-0 overflow-y-hidden"
         >
           <svg
@@ -58,7 +58,7 @@ function InfoCard({ img, heading, content }: Props) {
               }}
             />
           </svg>
-        </motion.div>
+        </div>
         <h1
           style={{ boxShadow: "0 0 15px 15px #131b32" }}
           className="relative z-10 text-center text-7xl bg-[#131B32] p-5 shadow-ll"

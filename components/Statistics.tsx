@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 function Statistics() {
   const data = [
     {
@@ -20,16 +21,13 @@ function Statistics() {
       number: "10+",
     },
   ];
-  const [inView, setInView] = useState(false);
-  const setFunction = () => {
-    setInView(true);
-  };
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <section className="relative flex flex-col gap-10 items-center justify-center text-center sm:py-28 py-10 sm:px-72 px-10 text-white h-full ">
-      <motion.div
-        whileInView={setFunction}
-        className="absolute top-5 w-full flex  z-0 "
-      >
+      <div ref={ref} className="absolute top-5 w-full flex  z-0 ">
         <svg
           width="1576"
           height="366"
@@ -58,7 +56,7 @@ function Statistics() {
             }}
           />
         </svg>
-      </motion.div>
+      </div>
       <div className="relative z-10 sm:w-28 sm:h-28 hidden sm:block">
         <Image className="object-contain" src="/mew-logo.jpeg" fill alt="mew" />
       </div>
