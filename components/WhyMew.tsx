@@ -33,8 +33,8 @@ function WhyMew() {
         We believe in the power of you, and we will not relent until you succeed
         in achieving what you have set out to do. MEW School is for those MADE
         TO DO. Explore the true meaning of yourself and set out to change the
-        world. We know you haven't been ready. That is why our seamless learning
-        technology and eager-to-help staff are there for you.
+        world. We know you haven{"'"}t been ready. That is why our seamless
+        learning technology and eager-to-help staff are there for you.
       </p>
 
       <div className="grid grid-cols-2 gap-10 w-[70%]">
